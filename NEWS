@@ -1,12 +1,17 @@
 #+TITLE: GNU Autoconf Archive NEWS             -*- mode:org;fill-column:79; -*-
 #+STARTUP: showall
 #
-# Copyright (c) 2019 Autoconf Archive Maintainers <autoconf-archive-maintainers@gnu.org>
+# Copyright (c) 2021 Autoconf Archive Maintainers <autoconf-archive-maintainers@gnu.org>
 #
 # Copying and distribution of this file, with or without modification, are
 # permitted in any medium without royalty provided the copyright notice
 # and this notice are preserved. This file is offered as-is, without any
 # warranty.
+
+* Noteworthy changes in release 2021.02.19 (2021-02-19) [stable]
+
+  The macros AX_CHECK_PCRE2 and AX_PROG_ROBOT have been added. Many other
+  macros have received updates.
 
 * Noteworthy changes in release 2019.01.06 (2019-01-06) [stable]
 

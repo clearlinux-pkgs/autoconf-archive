@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x41BC28FE99089D72 (simons@cryp.to)
 #
 Name     : autoconf-archive
-Version  : 2019.01.06
-Release  : 9
-URL      : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2019.01.06.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2019.01.06.tar.xz
-Source1  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2019.01.06.tar.xz.sig
+Version  : 2021.02.19
+Release  : 10
+URL      : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2021.02.19.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2021.02.19.tar.xz
+Source1  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2021.02.19.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -72,15 +72,15 @@ license components for the autoconf-archive package.
 
 
 %prep
-%setup -q -n autoconf-archive-2019.01.06
-cd %{_builddir}/autoconf-archive-2019.01.06
+%setup -q -n autoconf-archive-2021.02.19
+cd %{_builddir}/autoconf-archive-2021.02.19
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1605119927
+export SOURCE_DATE_EPOCH=1613763122
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -97,10 +97,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1605119927
+export SOURCE_DATE_EPOCH=1613763122
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/autoconf-archive
-cp %{_builddir}/autoconf-archive-2019.01.06/COPYING %{buildroot}/usr/share/package-licenses/autoconf-archive/e88f6aea9379eb98a7bbea965fc7127a64b41ad9
+cp %{_builddir}/autoconf-archive-2021.02.19/COPYING %{buildroot}/usr/share/package-licenses/autoconf-archive/e88f6aea9379eb98a7bbea965fc7127a64b41ad9
 %make_install
 
 %files
@@ -117,6 +117,10 @@ cp %{_builddir}/autoconf-archive-2019.01.06/COPYING %{buildroot}/usr/share/packa
 %files info
 %defattr(0644,root,root,0755)
 /usr/share/info/autoconf-archive.info
+/usr/share/info/autoconf-archive.info-1
+/usr/share/info/autoconf-archive.info-2
+/usr/share/info/autoconf-archive.info-3
+/usr/share/info/autoconf-archive.info-4
 
 %files license
 %defattr(0644,root,root,0755)
