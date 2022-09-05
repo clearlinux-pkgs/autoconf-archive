@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x41BC28FE99089D72 (simons@cryp.to)
 #
 Name     : autoconf-archive
-Version  : 2022.02.11
-Release  : 11
-URL      : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2022.02.11.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2022.02.11.tar.xz
-Source1  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2022.02.11.tar.xz.sig
+Version  : 2022.09.03
+Release  : 12
+URL      : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2022.09.03.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2022.09.03.tar.xz
+Source1  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2022.09.03.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -72,15 +72,15 @@ license components for the autoconf-archive package.
 
 
 %prep
-%setup -q -n autoconf-archive-2022.02.11
-cd %{_builddir}/autoconf-archive-2022.02.11
+%setup -q -n autoconf-archive-2022.09.03
+cd %{_builddir}/autoconf-archive-2022.09.03
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644604914
+export SOURCE_DATE_EPOCH=1662358757
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -97,10 +97,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1644604914
+export SOURCE_DATE_EPOCH=1662358757
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/autoconf-archive
-cp %{_builddir}/autoconf-archive-2022.02.11/COPYING %{buildroot}/usr/share/package-licenses/autoconf-archive/e88f6aea9379eb98a7bbea965fc7127a64b41ad9
+cp %{_builddir}/autoconf-archive-%{version}/COPYING %{buildroot}/usr/share/package-licenses/autoconf-archive/e88f6aea9379eb98a7bbea965fc7127a64b41ad9
 %make_install
 
 %files
@@ -117,6 +117,10 @@ cp %{_builddir}/autoconf-archive-2022.02.11/COPYING %{buildroot}/usr/share/packa
 %files info
 %defattr(0644,root,root,0755)
 /usr/share/info/autoconf-archive.info
+/usr/share/info/autoconf-archive.info-1
+/usr/share/info/autoconf-archive.info-2
+/usr/share/info/autoconf-archive.info-3
+/usr/share/info/autoconf-archive.info-4
 
 %files license
 %defattr(0644,root,root,0755)
