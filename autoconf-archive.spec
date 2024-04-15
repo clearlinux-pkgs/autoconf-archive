@@ -8,11 +8,11 @@
 # Source0 file verified with key 0x41BC28FE99089D72 (simons@cryp.to)
 #
 Name     : autoconf-archive
-Version  : 2022.09.03
-Release  : 14
-URL      : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2022.09.03.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2022.09.03.tar.xz
-Source1  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2022.09.03.tar.xz.sig
+Version  : 2023.02.20
+Release  : 15
+URL      : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2023.02.20.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2023.02.20.tar.xz
+Source1  : https://mirrors.kernel.org/gnu/autoconf-archive/autoconf-archive-2023.02.20.tar.xz.sig
 Source2  : 41BC28FE99089D72.pkey
 Summary  : No detailed summary available
 Group    : Development/Tools
@@ -86,10 +86,10 @@ chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE2}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE1} %{SOURCE0} > gpg.status
 grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) 41BC28FE99089D72' gpg.status
-%setup -q -n autoconf-archive-2022.09.03
-cd %{_builddir}/autoconf-archive-2022.09.03
+%setup -q -n autoconf-archive-2023.02.20
+cd %{_builddir}/autoconf-archive-2023.02.20
 pushd ..
-cp -a autoconf-archive-2022.09.03 buildavx2
+cp -a autoconf-archive-2023.02.20 buildavx2
 popd
 
 %build
@@ -97,7 +97,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713223498
+export SOURCE_DATE_EPOCH=1713223706
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -145,7 +145,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1713223498
+export SOURCE_DATE_EPOCH=1713223706
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/autoconf-archive
 cp %{_builddir}/autoconf-archive-%{version}/COPYING %{buildroot}/usr/share/package-licenses/autoconf-archive/e88f6aea9379eb98a7bbea965fc7127a64b41ad9 || :
